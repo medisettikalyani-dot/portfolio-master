@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalyani Medisetti | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Kalyani Medisetti, B.Com (Computer Applications) graduate and aspiring software developer skilled in HTML, CSS, JavaScript, Python, and SQL."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/micku7zu/vanilla-tilt.js@1.8.0/dist/vanilla-tilt.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#top" class="logo">KM</a>
+        <nav class="nav" aria-label="Main navigation">
+          <button
+            class="nav__toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav__list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#timeline">Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-toggle__icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Aspiring Software Developer</p>
+            <h1 id="hero-title">
+              Hi, I’m <span class="accent">Kalyani&nbsp;Medisetti</span>.
+            </h1>
+            <p class="hero__subtitle">
+              B.Com (Computer Applications) graduate
+              Aspiring Web developer with a strong foundation in
+              modern web technologies and a passion for solving real-world
+              problems through clean, user‑focused design and development.
+            </p>
+            <div class="hero__actions">
+              <a href="#projects" class="btn btn--primary">View My Work</a>
+              <a href="#contact" class="btn btn--ghost">Let’s Connect</a>
+            </div>
+            <div class="hero__meta">
+              <div>
+                <h3>
+                  <span class="icon-circle">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M4 6.5C4 5.12 5.12 4 6.5 4h3A2.5 2.5 0 0 1 12 6.5v3A2.5 2.5 0 0 1 9.5 12h-3A2.5 2.5 0 0 1 4 9.5v-3Zm8.5 0A2.5 2.5 0 0 1 15 4.01h2.5A2.5 2.5 0 0 1 20 6.5v2.5A2.5 2.5 0 0 1 17.5 11h-2.5a2.5 2.5 0 0 1-2.5-2.5V6.5Zm-8.5 8A2.5 2.5 0 0 1 6.5 12h3A2.5 2.5 0 0 1 12 14.5v3A2.5 2.5 0 0 1 9.5 20h-3A2.5 2.5 0 0 1 4 17.5v-3Zm8.5 0A2.5 2.5 0 0 1 15 12.01h2.5A2.5 2.5 0 0 1 20 14.5v3A2.5 2.5 0 0 1 17.5 20h-2.5A2.5 2.5 0 0 1 12 17.5v-3Z"
+                      />
+                    </svg>
+                  </span>
+                  Tech Stack
+                </h3>
+                <p>HTML · CSS · JavaScript · Python · SQL • Git & GitHub • GenAI</p>
+              </div>
+              <div>
+                <h3>
+                  <span class="icon-circle icon-circle--secondary">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M5.25 5A2.25 2.25 0 0 0 3 7.25v9.5A2.25 2.25 0 0 0 5.25 19h13.5A2.25 2.25 0 0 0 21 16.75v-9.5A2.25 2.25 0 0 0 18.75 5H5.25Zm0 1.5h13.5a.75.75 0 0 1 .75.75V9h-15V7.25a.75.75 0 0 1 .75-.75Zm-.75 5.5h15v4.75a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V12Z"
+                      />
+                    </svg>
+                  </span>
+                  Core Strengths
+                </h3>
+                <p>Teamwork · Adaptability · Curiosity · Time Management</p>
+              </div>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="hero__photo-wrapper">
+              <img
+                src="./WhatsApp Image 2026-02-04 at 10.02.28 PM.jpeg"
+                alt="Portrait of Kalyani Medisetti"
+                class="hero__photo"
+              />
+            </div>
+            <div class="hero-card">
+              <p class="hero-card__label">Currently exploring</p>
+              <p class="hero-card__title">Web development & problem solving</p>
+              <div class="hero-card__tags">
+                <span>Frontend</span>
+                <span>Python</span>
+                <span>Databases</span>
+              </div>
+            </div>
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container section__inner">
+          <div class="section__header">
+            <p class="section__eyebrow">About</p>
+            <h2 id="about-title">Who I am</h2>
+          </div>
+          <div class="about__container">
+            <div class="about__main">
+              <div class="about__card about__intro">
+                <div class="about__card-badge">
+                  <span class="badge-icon">👋</span>
+                  <span>Introduction</span>
+                </div>
+                <h3>Kalyani Medisetti</h3>
+                <p class="about__intro-text">
+                  I'm a <strong>B.Com (Computer Applications) graduate</strong> who transformed curiosity into a career in technology. With a solid foundation in business and commerce, I decided to dive into web development and software engineering.
+                
+                <div class="about__card-badge">
+                  <span class="badge-icon">🎓</span>
+                  <span>My Journey</span>
+                </div>
+                <p>
+                  To strengthen my technical foundation, I joined an <strong>Academy for Career in Technology</strong> where I mastered modern web technologies including <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, and <strong>SQL</strong>.
+                </p>
+              </div>
+
+              <div class="about__card about__approach">
+                <div class="about__card-badge">
+                  <span class="badge-icon">⚡</span>
+                  <span>My Approach</span>
+                </div>
+                <p>
+                  Beyond technical skills, I've developed essential <strong>employability skills</strong>—teamwork, adaptability, curiosity, and strong time management. I'm passionate about building <strong>simple, clear, and helpful experiences</strong> that solve real-world problems.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__sidebar">
+              <div class="about__highlights">
+                <h3 class="highlights__title">Key Traits</h3>
+                <ul class="highlights__list">
+                  <li>
+                    <span class="highlight-icon">→</span>
+                    <span>Curious learner</span>
+                  </li>
+                  <li>
+                    <span class="highlight-icon">→</span>
+                    <span>Problem solver</span>
+                  </li>
+                  <li>
+                    <span class="highlight-icon">→</span>
+                    <span>Team player</span>
+                  </li>
+                  <li>
+                    <span class="highlight-icon">→</span>
+                    <span>Detail oriented</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="about__focus">
+                <h3 class="focus__title">What Drives Me</h3>
+                <p class="focus__text">
+                  Creating user-focused solutions and continuously learning new technologies to stay ahead in the ever-evolving tech landscape.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section section--alt" aria-labelledby="skills-title">
+        <div class="container section__inner">
+            <div class="section__header">
+              <p class="section__eyebrow">Skills</p>
+              <h2 id="skills-title">What I work with</h2>
+            </div>
+          <div class="skills__grid">
+            <div class="card skills__card">
+              <h3>
+                <span class="icon-circle">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4.75 5A1.75 1.75 0 0 0 3 6.75v3.5A1.75 1.75 0 0 0 4.75 12h3.5A1.75 1.75 0 0 0 10 10.25v-3.5A1.75 1.75 0 0 0 8.25 5h-3.5Zm0 7A1.75 1.75 0 0 0 3 13.75v3.5A1.75 1.75 0 0 0 4.75 19h3.5A1.75 1.75 0 0 0 10 17.25v-3.5A1.75 1.75 0 0 0 8.25 12h-3.5Zm7.25-5.25A1.75 1.75 0 0 1 13.75 5h3.5A1.75 1.75 0 0 1 19 6.75v3.5A1.75 1.75 0 0 1 17.25 12h-3.5A1.75 1.75 0 0 1 12 10.25v-3.5Zm1.75 7.25A1.75 1.75 0 0 0 12 16.75v.5A1.75 1.75 0 0 0 13.75 19h3.5A1.75 1.75 0 0 0 19 17.25v-.5A1.75 1.75 0 0 0 17.25 15h-3.5Z"
+                    />
+                  </svg>
+                </span>
+                Technical Skills
+              </h3>
+              <ul class="chip-list">
+                <li><span class="chip-icon">&lt;/&gt;</span> HTML</li>
+                <li><span class="chip-icon">🎨</span> CSS</li>
+                <li><span class="chip-icon">⚡</span> JavaScript</li>
+                <li><span class="chip-icon">🐍</span> Python</li>
+                <li><span class="chip-icon">🗄️</span> SQL</li>
+                <li><span class="chip-icon"></span> Git & Github</li>
+                <li><span class="chip-icon">🤖</span> GenAI</li>
+              </ul>
+              <p class="card__note">
+                Comfortable building responsive, accessible web pages and
+                working with logic, data, and problem‑solving.
+              </p>
+            </div>
+            <div class="card skills__card">
+              <h3>
+                <span class="icon-circle icon-circle--secondary">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M7 6.25A3.25 3.25 0 0 1 10.25 3h3.5A3.25 3.25 0 0 1 17 6.25V7h1.75A2.25 2.25 0 0 1 21 9.25v8.5A2.25 2.25 0 0 1 18.75 20h-9.5A2.25 2.25 0 0 1 7 17.75v-11.5ZM8.5 7V6.25c0-.97.78-1.75 1.75-1.75h3.5c.97 0 1.75.78 1.75 1.75V7h-7ZM5 8.75v9A2.25 2.25 0 0 0 7.25 20H16.5v-1.5h-9.5a.75.75 0 0 1-.75-.75v-9H5Z"
+                    />
+                  </svg>
+                </span>
+                Employability Skills
+              </h3>
+              <ul class="chip-list">
+                <li><span class="chip-icon">👥</span> Teamwork</li>
+                <li><span class="chip-icon">🔄</span> Adaptability</li>
+                <li><span class="chip-icon">🧠</span> Curiosity</li>
+                <li><span class="chip-icon">⏰</span> Time Management</li>
+                <li><span class="chip-icon">💬</span> Communication</li>
+              </ul>
+              <p class="card__note">
+                Trained to collaborate in teams, stay open to feedback, and
+                manage tasks to deliver quality work on time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="section"
+        aria-labelledby="projects-title"
+      >
+        <div class="container section__inner">
+          <div class="section__header">
+            <p class="section__eyebrow">Projects</p>
+            <h2 id="projects-title">Things I’ve worked on</h2>
+            <p class="section__description">
+              Browse four featured projects with short descriptions, live links, and GitHub repos.
+            </p>
+          </div>
+          <div id="project-list" class="projects__grid">
+            <p class="loading">Loading projects...</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="certifications"
+        class="section section--alt"
+        aria-labelledby="certifications-title"
+      >
+        <div class="container section__inner">
+          <div class="section__header">
+            <p class="section__eyebrow">Certifications</p>
+            <h2 id="certifications-title">Verified Certificates</h2>
+            <p class="section__description">
+              Each certificate includes a short summary and image preview. Replace the image URLs in script.js with your own certificate photo links.
+            </p>
+          </div>
+          <div id="certificate-list" class="certifications__grid">
+            <p class="loading">Loading certificates...</p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="timeline"
+        class="section section--alt"
+        aria-labelledby="timeline-title"
+      >
+        <div class="container section__inner">
+          <div class="section__header">
+            <p class="section__eyebrow">Journey</p>
+            <h2 id="timeline-title">How I got here</h2>
+          </div>
+          <ol class="timeline">
+            <li class="timeline__item">
+              <div class="timeline__marker"></div>
+              <div class="timeline__content">
+                <h3>B.Com (Computer Applications)</h3>
+                <p>
+                  Completed my graduation with a strong base in computer
+                  concepts along with commerce subjects.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__marker"></div>
+              <div class="timeline__content">
+                <h3>Academy for Career in Technology</h3>
+                <p>
+                  Trained in HTML, CSS, JavaScript, Python, and SQL while
+                  building projects and practicing problem‑solving.
+                </p>
+              </div>
+            </li>
+            <li class="timeline__item">
+              <div class="timeline__marker"></div>
+              <div class="timeline__content">
+                <h3>Employability & Soft Skills</h3>
+                <p>
+                  Learned how to work effectively in teams, stay adaptable,
+                  manage time, and communicate clearly in a professional
+                  environment.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="section contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="container section__inner contact__inner">
+          <div>
+            <div class="section__header">
+              <p class="section__eyebrow">Contact</p>
+              <h2 id="contact-title">Let’s build something</h2>
+            </div>
+            <p class="contact__text">
+              I’m actively looking for opportunities as a
+              <strong>fresher software developer</strong> or
+              <strong>trainee</strong>. If you feel I might be a good fit for
+              your team, I’d be happy to connect and learn more.
+            </p>
+            <ul class="contact__summary">
+              <li><span>Location</span><span>India (open to relocate)</span></li>
+              <li><span>Role</span><span>Entry‑level / Fresher</span></li>
+            </ul>
+          </div>
+          <form id="contact-form" class="contact__form" autocomplete="on">
+            <div class="form__group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" />
+            </div>
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+              />
+            </div>
+            <div class="form__group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Tell me about the opportunity or say hello..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Send Message
+            </button>
+            <p class="form__note">
+              When you send, your email app will open with your message ready to
+              send to me.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> Kalyani Medisetti. All rights reserved.</p>
+        <p class="footer__note">
+          Crafted with curiosity, consistency, and clean code.
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
