@@ -10,31 +10,22 @@ const PROJECTS = [
     live: "",
   },
   {
-    title: "Professional Portfolio",
-    type: "Solo Project",
-    description: "Responsive portfolio built with HTML, CSS, and JavaScript.",
-    image: "portfolio.png",
-    tags: ["Responsive", "Web", "Design"],
-    github: "",
-    live: "",
-  },
-  {
     title: "Hospital Website",
     type: "Solo Project",
     description: "Informative hospital website with services and contact info.",
     image: "hopital.png",
     tags: ["Web", "HTML", "CSS"],
     github: "https://medisettikalyani-dot.github.io/HOSPITAL_WEBSITE/",
-    live: "",
+    // live: "",
   },
   {
-    title: "CodeQuiz – Interactive Quiz App",
+    title: "Tic Tac Toe",
     type: "Solo Project",
-    description: "Interactive coding quiz with scoring and feedback.",
+    description: "A responsive and interactive Tic Tac Toe game showcasing logic building and JavaScript skills.",
     image: "game.png",
     tags: ["Quiz", "Interactive", "JavaScript"],
     github: "https://medisettikalyani-dot.github.io/Game_1/",
-    live: "",
+    // live: "",
   },
 ];
 
@@ -45,7 +36,7 @@ const CERTIFICATIONS = [
     issuer: "Academy for Career in Technology",
     date: "2026",
     image: "https://your-certificate-image-link.com/TCS.png",
-    link: "",
+    // link: "",
     description: "Completed intensive training in HTML, CSS, JavaScript, Python, and SQL.",
   },
   {
@@ -66,7 +57,7 @@ const CERTIFICATIONS = [
   },
   {
     title: "Public Speaking",
-    issuer: "DataTech Institute",
+    issuer: "Simplilearn",
     date: "2026",
     image: "public.png",
     link: "https://example.com/certificate-public-speaking",
@@ -142,7 +133,7 @@ function renderProjects() {
     return `
       <article class="card project tilt-card" tabindex="0">
         <div class="project__image-wrapper">
-          <img src="${project.image}" alt="${project.title} screenshot" class="project__image" />
+          <img src="${project.image}" alt="${project.title} screenshot" class="project__image" data-image="${project.image}" />
         </div>
         <div class="project__content">
           <div class="project__badge">${project.type}</div>
@@ -171,7 +162,7 @@ function renderCertificates() {
     return `
       <article class="card certificate-card tilt-card">
         <div class="certificate__visual">
-          <img src="${certificate.image}" alt="${certificate.title} certificate" />
+          <img src="${certificate.image}" alt="${certificate.title} certificate" data-image="${certificate.image}" />
         </div>
         <div>
           <p class="certificate__label">${certificate.issuer}</p>
@@ -265,6 +256,54 @@ function setFooterYear() {
   }
 }
 
+function openModal(imageSrc) {
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+  if (!modal || !modalImage) return;
+
+  modalImage.src = imageSrc;
+  modal.classList.add("is-active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  const modal = document.getElementById("image-modal");
+  if (!modal) return;
+
+  modal.classList.remove("is-active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function setupModal() {
+  const modal = document.getElementById("image-modal");
+  const closeBtn = document.querySelector(".modal__close");
+  if (!modal || !closeBtn) return;
+
+  // Click on images to open modal
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("project__image") || e.target.classList.contains("certificate__visual")) {
+      const img = e.target.classList.contains("project__image") ? e.target : e.target.querySelector("img") || e.target;
+      const imageSrc = img.getAttribute("data-image") || img.src;
+      if (imageSrc) openModal(imageSrc);
+    }
+  });
+
+  // Close button
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close on background click
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   smoothScrollAnchors();
   setupMobileNav();
@@ -272,6 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCertificates();
   setupReveal();
   setupContactForm();
+  setupModal();
   initTilt();
   setFooterYear();
 });
