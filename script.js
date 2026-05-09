@@ -19,40 +19,57 @@ const PROJECTS = [
     // live: "",
   },
   {
-    title: "Tic Tac Toe",
+    title: "Chess",
     type: "Solo Project",
-    description: "A responsive and interactive Tic Tac Toe game showcasing logic building and JavaScript skills.",
-    image: "game.png",
+    description: "A responsive and interactive chess game showcasing logic building and JavaScript skills.",
+    image: "chess.png",
     tags: ["Quiz", "Interactive", "JavaScript"],
-    github: "https://medisettikalyani-dot.github.io/Game_1/",
+    github: "https://medisettikalyani-dot.github.io/chessgame/",
     // live: "",
   },
 ];
 
-// Replace these image URLs with your own certificate images.
+
 const CERTIFICATIONS = [
   {
-    title: "Full Stack Web Development",
-    issuer: "Academy for Career in Technology",
+    title: "Selling Skills",
+    issuer: "ICICI Academy for skills",
     date: "2026",
-    image: "https://your-certificate-image-link.com/TCS.png",
+    image: "icici.jpeg",
     // link: "",
-    description: "Completed intensive training in HTML, CSS, JavaScript, Python, and SQL.",
+    description: "",
   },
   {
     title: "Python Programming Certificate",
     issuer: "SCALER Topics",
     date: "2026",
     image: "python.png",
-    link: "https://example.com/certificate-python",
+    // link: "https://example.com/certificate-python",
     description: "Applied practical Python skills in data handling and automation.",
   },
+   {
+    title: "TCS iON Career Edge - Young Professional",
+    issuer: "TCS iON, Tata Consultancy Services",
+    date: "2026",
+    image: "TCS.png",
+    // link: "https://example.com/certificate-tcs",
+    description: "Career development program for young professionals in technology.",
+  },
+   {
+    title: "DBMS",
+    issuer: "SCALER Topics",
+    date: "2026",
+    image: "DBMS.png",
+    // link: "https://example.com/certificate-python",
+    description: "Applied practical Python skills in data handling and automation.",
+  },
+
   {
     title: "Personality Development",
     issuer: "Simplilearn",
     date: "2026",
     image: "personality.png",
-    link: "https://example.com/certificate-personality",
+    // link: "https://example.com/certificate-personality",
     description: "Enhanced personal and professional skills for better communication and growth.",
   },
   {
@@ -60,23 +77,16 @@ const CERTIFICATIONS = [
     issuer: "Simplilearn",
     date: "2026",
     image: "public.png",
-    link: "https://example.com/certificate-public-speaking",
+    // link: "https://example.com/certificate-public-speaking",
     description: "Developed effective public speaking and presentation skills.",
   },
-  {
-    title: "TCS iON Career Edge - Young Professional",
-    issuer: "TCS iON, Tata Consultancy Services",
-    date: "2026",
-    image: "TCS.png",
-    link: "https://example.com/certificate-tcs",
-    description: "Career development program for young professionals in technology.",
-  },
+ 
   {
     title: "HTML",
     issuer: "Simplilearn",
     date: "2025",
     image: "html.png",
-    link: "https://example.com/certificate-html",
+    // link: "https://example.com/certificate-html",
     description: "Fundamentals of HTML for web development.",
   },
 ];
@@ -256,13 +266,28 @@ function setFooterYear() {
   }
 }
 
+function setupThemeToggle() {
+  const toggleButton = document.querySelector(".theme-toggle");
+  const currentTheme = localStorage.getItem("theme");
+  const body = document.body;
+
+  if (currentTheme === "light") {
+    body.classList.add("light");
+  }
+
+  toggleButton?.addEventListener("click", () => {
+    const isLight = body.classList.toggle("light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
+}
+
 function openModal(imageSrc) {
   const modal = document.getElementById("image-modal");
   const modalImage = document.getElementById("modal-image");
   if (!modal || !modalImage) return;
 
   modalImage.src = imageSrc;
-  modal.classList.add("is-active");
+  modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
 }
@@ -271,7 +296,7 @@ function closeModal() {
   const modal = document.getElementById("image-modal");
   if (!modal) return;
 
-  modal.classList.remove("is-active");
+  modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
@@ -283,9 +308,13 @@ function setupModal() {
 
   // Click on images to open modal
   document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("project__image") || e.target.classList.contains("certificate__visual")) {
-      const img = e.target.classList.contains("project__image") ? e.target : e.target.querySelector("img") || e.target;
-      const imageSrc = img.getAttribute("data-image") || img.src;
+    const target = e.target;
+    const projectImage = target.closest(".project__image");
+    const certificateWrapper = target.closest(".certificate__visual");
+    const imageElement = projectImage || certificateWrapper?.querySelector("img");
+
+    if (imageElement) {
+      const imageSrc = imageElement.getAttribute("data-image") || imageElement.src;
       if (imageSrc) openModal(imageSrc);
     }
   });
@@ -312,6 +341,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReveal();
   setupContactForm();
   setupModal();
+  setupThemeToggle();
   initTilt();
   setFooterYear();
 });
