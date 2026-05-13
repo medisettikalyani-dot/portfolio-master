@@ -180,7 +180,7 @@ function renderCertificates() {
           <p class="card__note">${certificate.description}</p>
           <div class="certificate__meta">
             <span>${certificate.date}</span>
-            ${certificate.link && certificate.link.trim() ? `<a class="btn btn--primary btn--sm btn--icon" href="${certificate.link}" target="_blank" rel="noopener noreferrer"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm3 13H7v-2h10v2Zm0 4H7v-2h10v2Z"/></svg>View Credential</a>` : ""}
+            ${certificate.link && certificate.link.trim() ? `<a class="btn btn--primary btn--sm btn--icon" href="${certificate.link}" target="_blank" rel="noopener noreferrer" download><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm3 13H7v-2h10v2Zm0 4H7v-2h10v2Z"/></svg>Download Certificate</a>` : ""}
           </div>
         </div>
       </article>
@@ -243,6 +243,7 @@ function setupContactForm() {
 }
 
 function initTilt() {
+
   const tiltElements = document.querySelectorAll(
     ".tilt-card, .skills__card, .about__card, .about__highlights, .about__focus, .contact__form, .hero-card"
   );
